@@ -48,7 +48,7 @@ export default class View {
             if (type !== 'all' && shouldBeCompleted !== isCompleted) {
                 shouldHide = true;
             }
-            
+
             if (shouldHide) {
                 row.classList.add('d-none');
             } else {
@@ -88,7 +88,7 @@ export default class View {
         row.innerHTML = `
         <td>${todo.title}</td>
         <td>${todo.description}</td>
-        <td>${todo.priority}</td>
+        <td class="text-center">${todo.priority}</td>
         <td class="text-center">
         </td>
         <td class="text-right">
