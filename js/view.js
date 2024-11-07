@@ -36,11 +36,11 @@ export default class View {
         const { type, words } = filters;
         const [, ...rows] = this.table.getElementsByTagName('tr');
         for (const row of rows) {
-            const [title, description, completed] = row.children;
+            const [title, description, priority, completed] = row.children;
             let shouldHide = false;
 
             if (words) {
-                shouldHide = !title.innerText.includes(words) && !description.innerText.includes(words);
+                shouldHide = !title.innerText.includes(words) && !description.innerText.includes(words) && !priority.innerText.includes(words);
             }
             const shouldBeCompleted = type === 'completed';
             const isCompleted = completed.children[0].checked;
@@ -48,6 +48,7 @@ export default class View {
             if (type !== 'all' && shouldBeCompleted !== isCompleted) {
                 shouldHide = true;
             }
+            
             if (shouldHide) {
                 row.classList.add('d-none');
             } else {

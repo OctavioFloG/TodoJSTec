@@ -4,6 +4,7 @@ export default class Modal {
         this.title = document.getElementById("modal-title");
         this.description = document.getElementById("modal-description");
         this.priority = document.getElementById("modal-priority");
+        this.priorityText = document.getElementById("modal-range");
         this.btn = document.getElementById("modal-btn");
         this.completed = document.getElementById("modal-completed");
         this.alert = new Alert('modal-alert');
@@ -15,6 +16,7 @@ export default class Modal {
         this.title.value = todo.title;
         this.description.value = todo.description;
         this.priority.value = todo.priority;
+        this.priorityText.innerText = todo.priority;
         this.completed.checked = todo.completed
     }
 
