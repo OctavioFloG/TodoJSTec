@@ -61,5 +61,10 @@ export default class Model {
         return { ...todo };
     }
 
-    
+    removeTodo(id) {
+        const index = this.todos.findIndex((todo) => todo.id === id);
+        this.todos.splice(index, 1);
+        console.log(this.todos);
+        this.save();
+    }
 }
